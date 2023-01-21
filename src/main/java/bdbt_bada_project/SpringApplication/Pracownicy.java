@@ -6,14 +6,15 @@ public class Pracownicy {
     private String imie;
     private String nazwisko;
     private String data_urodzenia;
-    private String pesel;
+    private int pesel;
     private String plec;
     private String email;
-    private String nr_telefonu;
-    private String nr_konta;
+    private int nr_telefonu;
+    private int nr_konta;
     private String data_zatrudnienia;
+    private int nr_adresu;
 
-    public Pracownicy(int nr_pracownika, String imie, String nazwisko, String data_urodzenia, String pesel, String plec, String email, String nr_telefonu, String nr_konta, String data_zatrudnienia) {
+    public Pracownicy(int nr_pracownika, String imie, String nazwisko, String data_urodzenia, int pesel, String plec, String email, int nr_telefonu, int nr_konta, String data_zatrudnienia, int nr_adresu) {
         this.nr_pracownika = nr_pracownika;
         this.imie = imie;
         this.nazwisko = nazwisko;
@@ -24,6 +25,7 @@ public class Pracownicy {
         this.nr_telefonu = nr_telefonu;
         this.nr_konta = nr_konta;
         this.data_zatrudnienia = data_zatrudnienia;
+        this.nr_adresu = nr_adresu;
 
     }
 
@@ -51,10 +53,10 @@ public class Pracownicy {
     public void setData_urodzenia(String data_urodzenia) {
         this.data_urodzenia = data_urodzenia;
     }
-    public String getPesel() {
+    public int getPesel() {
         return pesel;
     }
-    public void setPesel(String pesel) {
+    public void setPesel(int pesel) {
         this.pesel = pesel;
     }
     public String getPlec() {
@@ -69,16 +71,16 @@ public class Pracownicy {
     public void setEmail(String email) {
         this.email = email;
     }
-    public String getNr_telefonu() {
+    public int getNr_telefonu() {
         return nr_telefonu;
     }
-    public void setNr_telefonu(String nr_telefonu) {
+    public void setNr_telefonu(int nr_telefonu) {
         this.nr_telefonu = nr_telefonu;
     }
-    public String getNr_konta() {
+    public int getNr_konta() {
         return nr_konta;
     }
-    public void setNr_konta(String nr_konta) {
+    public void setNr_konta(int nr_konta) {
         this.nr_konta = nr_konta;
     }
     public String getData_zatrudnienia() {
@@ -86,6 +88,13 @@ public class Pracownicy {
     }
     public void setData_zatrudnienia(String data_zatrudnienia) {
         this.data_zatrudnienia = data_zatrudnienia;
+    }
+    public int getNr_adresu() {
+        return nr_adresu;
+    }
+
+    public void setNr_adresu(int nr_adresu) {
+        this.nr_adresu = nr_adresu;
     }
 
     @Override
@@ -101,6 +110,7 @@ public class Pracownicy {
                 ", nr_telefonu='" + nr_telefonu + '\'' +
                 ", nr_konta='" + nr_konta + '\'' +
                 ", data_zatrudnienia='" + data_zatrudnienia + '\'' +
+                ", Nr_adresu=" + nr_adresu +
                 '}';
     }
 

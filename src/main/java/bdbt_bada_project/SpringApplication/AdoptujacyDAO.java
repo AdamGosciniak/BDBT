@@ -35,7 +35,7 @@ public class AdoptujacyDAO {
 
     public void save(Adoptujacy Adoptujacy) {
         SimpleJdbcInsert insertActor = new SimpleJdbcInsert(jdbcTemplate);
-        insertActor.withTableName("Zwierzeta").usingColumns("Nr_zwierzecia", "Gatunek", "Rasa", "Rodzaj_karmy", "Imie", "Data_przyjecia", "Wiek", "Waga", "Data_kastracji");
+        insertActor.withTableName("Zwierzeta").usingColumns("Nr_zwierzecia", "Gatunek", "Rasa", "Rodzaj_karmy", "Imie", "Data_przyjecia", "Wiek", "Waga", "Data_kastracji", "Nr_adresu");
 
         BeanPropertySqlParameterSource param = new BeanPropertySqlParameterSource(Adoptujacy);
         insertActor.execute(param);
@@ -51,7 +51,7 @@ public class AdoptujacyDAO {
 
     public void update(Adoptujacy Adoptujacy){
         String sql = "UPDATE adoptujacy SET imie=:imie, nazwisko=:nazwisko, pesel=:pesel, nr_telefonu=:nr_telefonu," +
-                " email=:email WHERE nr_adoptujacego=:nr_adoptujacego";
+                " email=:email, nr_adresu=:nr_adresu WHERE nr_adoptujacego=:nr_adoptujacego";
         BeanPropertySqlParameterSource param = new BeanPropertySqlParameterSource(Adoptujacy);
         NamedParameterJdbcTemplate template = new NamedParameterJdbcTemplate(jdbcTemplate);
 

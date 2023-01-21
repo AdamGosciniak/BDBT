@@ -31,7 +31,7 @@ public class PracownicyDAO {
     public void save(Pracownicy pracownicy) {
         SimpleJdbcInsert insertActor = new SimpleJdbcInsert(jdbcTemplate);
         insertActor.withTableName("pracownicy").usingColumns("nr_pracownika", "imie", "nazwisko", "data_urodzenia",
-                "pesel", "plec", "data_zatrudnienia", "numer_telefonu", "email", "numer_konta");
+                "pesel", "plec", "data_zatrudnienia", "numer_telefonu", "email", "numer_konta", "nr_adresu");
 
         BeanPropertySqlParameterSource param = new BeanPropertySqlParameterSource(pracownicy);
         insertActor.execute(param);
@@ -50,7 +50,7 @@ public class PracownicyDAO {
     public void update(Pracownicy pracownicy) {
         String sql = "UPDATE PRACOWNICY SET imie=:imie, nazwisko=:nazwisko, data_urodzenia=:data_urodzenia," +
                 " pesel=:pesel, plec=:plec, data_zatrudnienia=:data_zatrudnienia, numer_telefonu=:numer_telefonu, email=:email," +
-                " numer_konta=:numer_konta," +
+                " numer_konta=:numer_konta, nr_adresu=:nr_adresu" +
                 " WHERE nr_pracownika=:nr_pracownika";
         BeanPropertySqlParameterSource param = new BeanPropertySqlParameterSource(pracownicy);
         NamedParameterJdbcTemplate template = new NamedParameterJdbcTemplate(jdbcTemplate);

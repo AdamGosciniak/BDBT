@@ -28,7 +28,7 @@ public class ZwierzetaDAO {
     }
     public void save(Zwierzeta zwierzeta) {
         SimpleJdbcInsert insert = new SimpleJdbcInsert(jdbcTemplate);
-        insert.withTableName("Zwierzeta").usingColumns("nr_zwierzecia", "gatunek", "rasa", "rodzaj_karmy", "imie", "data_przyjecia", "wiek", "waga", "data_kastracji");
+        insert.withTableName("Zwierzeta").usingColumns("nr_zwierzecia", "gatunek", "rasa", "rodzaj_karmy", "imie", "data_przyjecia", "wiek", "waga", "data_kastracji", "nr_klatki");
 
         BeanPropertySqlParameterSource param = new BeanPropertySqlParameterSource(zwierzeta);
         insert.execute(param);
@@ -44,7 +44,8 @@ public class ZwierzetaDAO {
 
     public void update(Zwierzeta zwierzeta){
         String sql = "UPDATE zwierzeta SET gatunek=:gatunek, rasa=:rasa, rodzaj_karmy=:rodzaj_karmy, " +
-                " imie=:imie, data_przyjecia=:data_przyjecia, wiek=:wiek, waga=:waga WHERE nr_zwierzecia=:nr_zwierzecia";
+                " imie=:imie, data_przyjecia=:data_przyjecia, wiek=:wiek, waga=:waga " +
+                " nr_klatki=:nr_klatki WHERE nr_zwierzecia=:nr_zwierzecia";
         BeanPropertySqlParameterSource param = new BeanPropertySqlParameterSource(zwierzeta);
         NamedParameterJdbcTemplate template = new NamedParameterJdbcTemplate(jdbcTemplate);
 

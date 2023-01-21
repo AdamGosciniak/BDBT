@@ -9,14 +9,16 @@ public class Adoptujacy {
     private String adres;
     private int nr_telefonu;
     private String email;
+    private int nr_adresu;
 
-    public Adoptujacy(int nr_adoptujacego, String imie, String nazwisko, String adres, int pesel, int nr_telefonu, String email) {
+    public Adoptujacy(int nr_adoptujacego, String imie, String nazwisko, String adres, int pesel, int nr_telefonu, String email, int nr_adresu) {
         this.nr_adoptujacego = nr_adoptujacego;
         this.imie = imie;
         this.nazwisko = nazwisko;
         this.pesel = pesel;
         this.nr_telefonu = nr_telefonu;
         this.email = email;
+        this.nr_adresu = nr_adresu;
     }
 
     public int getNr_adoptujacego() {
@@ -59,6 +61,14 @@ public class Adoptujacy {
     public void setEmail(String email) {
         this.email = email;
     }
+    public int getNr_adresu() {
+        return nr_adresu;
+    }
+
+    public void setNr_adresu(int nr_adresu) {
+        this.nr_adresu = nr_adresu;
+    }
+
     @Override
     public String toString() {
         return "Adoptujący{" +
@@ -68,6 +78,7 @@ public class Adoptujacy {
                 ", Pesel=" + pesel + '\'' +
                 ", Nr telegonu=" + nr_telefonu + '\'' +
                 ", Email=" + email + '\'' +
+                ", Nr_adresu=" + nr_adresu +
                 '}';
     }
 

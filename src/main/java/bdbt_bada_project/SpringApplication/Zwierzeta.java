@@ -13,10 +13,11 @@ public class Zwierzeta {
     private int wiek;
     private int waga;
     private Date data_kastracji;
+    private int nr_klatki;
 
 
 
-    public Zwierzeta (int nr_zwierzecia, String gatunek, String rasa, String rodzaj_karmy, String imie, Date data_przyjecia, int wiek, int waga, Date data_kastracji) {
+    public Zwierzeta (int nr_zwierzecia, String gatunek, String rasa, String rodzaj_karmy, String imie, Date data_przyjecia, int wiek, int waga, Date data_kastracji, int nr_klatki) {
         this.nr_zwierzecia = nr_zwierzecia;
         this.gatunek = gatunek;
         this.rodzaj_karmy = rodzaj_karmy;
@@ -24,6 +25,7 @@ public class Zwierzeta {
         this.data_przyjecia = data_przyjecia;
         this.wiek = wiek;
         this.data_kastracji = data_kastracji;
+        this.nr_klatki = nr_klatki;
 
     }
 
@@ -82,6 +84,14 @@ public class Zwierzeta {
         this.data_kastracji = data_kastracji;
     }
 
+    public int getNr_klatki() {
+        return nr_klatki;
+    }
+
+    public void setNr_klatki(int nr_klatki) {
+        this.nr_klatki = nr_klatki;
+    }
+
 
     @Override
     public String toString() {
@@ -95,6 +105,7 @@ public class Zwierzeta {
                 ", Wiek='" + wiek + '\'' +
                 ", Waga='" + waga + '\'' +
                 ", Data_kastracji='" + data_kastracji + '\'' +
+                ", Nr_klatki='" + nr_klatki +
                 '}';
     }
 }
