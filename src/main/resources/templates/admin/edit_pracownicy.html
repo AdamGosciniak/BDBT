@@ -41,41 +41,52 @@
   </div>
 </nav>
 
-<div align="center">
-  <h1>Adoptujacy</h1>
-  <a href="/newClient">Dodaj nowego adoptującego </a>
-  <br/><br/>
-  <table border="1" cellpadding="10">
-    <thead>
-    <tr>
-      <th>Nr adoptujacego</th>
-      <th>Imie</th>
-      <th>Nazwisko</th>
-      <th>PESEL</th>
-      <th>Nr telefonu</th>
-      <th>E-mail</th>
-      <th>Nr adresu</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr th:each="adoptujacy : ${listAdoptujacy}">
-      <td th:text="${adoptujacy.nr_adpotujacego}">Nr adresu</td>
-      <td th:text="${adoptujacy.imie}">Kraj</td>
-      <td th:text="${adoptujacy.nazwisko}">Miasto</td>
-      <td th:text="${adoptujacy.pesel}">Ulica</td>
-      <td th:text="${adoptujacy.nr_telefonu}">Ulica</td>
-      <td th:text="${adoptujacy.email}">Ulica</td>
-      <td th:text="${adoptujacy.nr_adresu}">Ulica</td>
-      <td>
-        <a th:href="@{'/saveClient/' + ${adoptujacy.nr_adoptujacego}}">Edytuj</a>
-        &nbsp;&nbsp;&nbsp;&nbsp;
-        <a th:href="@{'/deleteClient/' + ${adoptujacy.nr_adoptujacego}}">Usuń</a>
-      </td>
-    </tr>
-    </tbody>
-  </table>
-</div>
 
+</div>
+<div align="center">
+  <h1>Edytuj dane pracownika</h1>
+  <br/>
+
+  <form action="#" th:action="@{/editEmployee}" th:object="${pracownicy}" method="post">
+    <table border="1" cellpadding="10">
+      <tr>
+        <td>Nr pracownika:</td>
+        <td><input type="text" th:field="*{nr_pracownika}" readonly="readonly"></td>
+      </tr>
+      <tr>
+        <td>Imie:</td>
+        <td><input type="text" th:field="*{imie}"></td>
+      </tr>
+      <tr>
+        <td>Nazwisko:</td>
+        <td><input type="text" th:field="*{nazwisko}"></td>
+      </tr>
+      <tr>
+        <td>Data urodzenia:</td>
+        <td><input type="text" th:field="*{data_urodzenia}"></td>
+      </tr>
+      <tr>
+        <td>PESEL:</td>
+        <td><input type="text" th:field="*{pesel}"></td>
+      </tr>
+      <tr>
+        <td>Plec:</td>
+        <td><input type="text" th:field="*{plec}"></td>
+      </tr>
+      <tr>
+        <td>Data zatrudnienia:</td>
+        <td><input type="text" th:field="*{data_zatrudnienia}"></td>
+      </tr>
+      <tr>
+        <td>Nr adresu:</td>
+        <td><input type="text" th:field="*{nr_adresu}"></td>
+      </tr>
+      <tr>
+        <td colspan="2"><button type="submit">Zapisz</button></td>
+      </tr>
+    </table>
+  </form>
+</div>
 
 <script th:src="@{/webjars/jquery/jquery.min.js}"></script>
 <script th:src="@{/webjars/popper.js/umd/popper.min.js}"></script>
