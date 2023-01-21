@@ -15,7 +15,6 @@ public class Adoptujacy {
         this.imie = imie;
         this.nazwisko = nazwisko;
         this.pesel = pesel;
-        this.adres = adres;
         this.nr_telefonu = nr_telefonu;
         this.email = email;
     }
@@ -45,13 +44,7 @@ public class Adoptujacy {
     public void setPesel(int pesel) {
         this.pesel = pesel;
     }
-    public String getAdres() {
-        return adres;
-    }
 
-    public void setAdres(String adres) {
-        this.adres = adres;
-    }
     public int getNr_telefonu() {
         return nr_telefonu;
     }
@@ -73,7 +66,6 @@ public class Adoptujacy {
                 ", Imię='" + imie + '\'' +
                 ", Nazwisko='" + nazwisko + '\'' +
                 ", Pesel=" + pesel + '\'' +
-                ", Adres=" + adres + '\'' +
                 ", Nr telegonu=" + nr_telefonu + '\'' +
                 ", Email=" + email + '\'' +
                 '}';

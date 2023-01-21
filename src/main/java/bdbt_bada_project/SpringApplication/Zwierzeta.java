@@ -89,12 +89,12 @@ public class Zwierzeta {
                 "Nr_zwierzecia=" + nr_zwierzecia +
                 ", Gatunek='" + gatunek + '\'' +
                 ", Rasa='" + rasa + '\'' +
-                ", Rodzaj karmy='" + rodzaj_karmy + '\'' +
+                ", Rodzaj_karmy='" + rodzaj_karmy + '\'' +
                 ", Imie='" + imie + '\'' +
-                ", Data przyjęcia='" + data_przyjecia + '\'' +
+                ", Data_przyjęcia='" + data_przyjecia + '\'' +
                 ", Wiek='" + wiek + '\'' +
                 ", Waga='" + waga + '\'' +
-                ", Data kastracji='" + data_kastracji + '\'' +
+                ", Data_kastracji='" + data_kastracji + '\'' +
                 '}';
     }
 }
