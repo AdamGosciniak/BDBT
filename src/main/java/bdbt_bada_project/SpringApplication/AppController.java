@@ -3,21 +3,32 @@ package bdbt_bada_project.SpringApplication;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.List;
 
 @Configuration
 public class AppController implements WebMvcConfigurer {
 
+    private SchroniskaDAO daoSc;
+    private PracownicyDAO daoPr;
+    private ZwierzetaDAO daoZw;
+    private AdoptujacyDAO daoAd;
+    private KlatkiDAO daoKl;
+    private WeterynarzeDAO daoWe;
+    private WolontariuszeDAO daoWo;
     public void addViewControllers(ViewControllerRegistry registry) {
         registry.addViewController("/index").setViewName("index");
         registry.addViewController("/").setViewName("index");
         registry.addViewController("/main").setViewName("main");
         registry.addViewController("/login").setViewName("login");
-
         registry.addViewController("/main_admin").setViewName("admin/main_admin");
         registry.addViewController("/main_user").setViewName("user/main_user");
     }
@@ -26,18 +37,15 @@ public class AppController implements WebMvcConfigurer {
     public class DashboardController
     {
         @RequestMapping
-                ("/main"
-                )
+                ("/main")
         public String defaultAfterLogin
                 (HttpServletRequest request) {
             if
-            (request.isUserInRole
-                    ("ADMIN")) {
+            (request.isUserInRole("ADMIN")) {
                 return "redirect:/main_admin";
             }
             else if
-            (request.isUserInRole
-                            ("USER")) {
+            (request.isUserInRole("USER")) {
                 return "redirect:/main_user";
             }
             else
@@ -55,5 +63,9 @@ public class AppController implements WebMvcConfigurer {
     public String showUserPage(Model model) {
         return "user/main_user";
     }
+
+
+
+
 }
 

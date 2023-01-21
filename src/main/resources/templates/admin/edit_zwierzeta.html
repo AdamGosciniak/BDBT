@@ -1,0 +1,117 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8"/>
+  <title>Main User Page</title>
+
+  <link th:rel="stylesheet" th:href="@{/webjars/bootstrap/4.0.0-2/css/bootstrap.min.css} "/>
+
+</head>
+<body>
+
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+  <div class="container">
+    <a class="navbar-brand" href="/">BDBT Spring Boot Project - Part II</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+            aria-controls="navbarResponsive"
+            aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav ml-auto">
+
+        <li class="nav-item">
+          <a class="nav-link" th:href="@{/index}">Home</a>
+        </li>
+
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Main
+            <span class="sr-only">(current)</span>
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" th:inline="text" style="color:lightskyblue;">You are logged in as <b
+                  style="text-transform:capitalize">[[${#httpServletRequest.remoteUser}]]</b></a>
+        </li>
+
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+</div>
+<div align="center">
+  <h1>Edytuj informacje o zwierzeciu</h1>
+  <br/>
+
+  <form action="#" th:action="@{/editAnimal}" th:object="${zwierzeta}" method="post">
+    <table border="1" cellpadding="10">
+      <tr>
+        <td>Nr zwierzecia:</td>
+        <td><input type="text" th:field="*{nr_zwierzecia}" readonly="readonly"></td>
+      </tr>
+      <tr>
+        <td>Gatunek:</td>
+        <td><input type="text" th:field="*{gatunek}"></td>
+      </tr>
+      <tr>
+        <td>Rasa:</td>
+        <td><input type="text" th:field="*{rasa}"></td>
+      </tr>
+      <tr>
+        <td>Rodzaj karmy:</td>
+        <td><input type="text" th:field="*{rodzaj_karmy}"></td>
+      </tr>
+      <tr>
+        <td>Imie:</td>
+        <td><input type="text" th:field="*{imie}"></td>
+      </tr>
+      <tr>
+        <td>Data przyjecia:</td>
+        <td><input type="text" th:field="*{data_przyjecia}"></td>
+      </tr>
+      <tr>
+        <td>Wiek:</td>
+        <td><input type="text" th:field="*{wiek}"></td>
+      </tr>
+      <tr>
+        <td>Plec:</td>
+        <td><input type="text" th:field="*{plec}"></td>
+      </tr>
+      <tr>
+        <td>Waga:</td>
+        <td><input type="text" th:field="*{waga}"></td>
+      </tr>
+      <tr>
+        <td>Towarzystwo:</td>
+        <td><input type="text" th:field="*{towarzystwo}"></td>
+      </tr>
+      <tr>
+        <td>Data kastracji:</td>
+        <td><input type="text" th:field="*{data_kastracji}"></td>
+      </tr>
+      <tr>
+        <td>Data adopcji:</td>
+        <td><input type="text" th:field="*{data_adopcji}"></td>
+      </tr>
+      <tr>
+        <td>Dlugosc siersci:</td>
+        <td><input type="text" th:field="*{dlugosc_siersci}"></td>
+      </tr>
+      <tr>
+        <td colspan="2"><button type="submit">Zapisz</button></td>
+      </tr>
+    </table>
+  </form>
+</div>
+
+<script th:src="@{/webjars/jquery/jquery.min.js}"></script>
+<script th:src="@{/webjars/popper.js/umd/popper.min.js}"></script>
+<script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
+<script th:src="@{/js/script.js}"></script>
+
+</body>
+</html>
