@@ -6,7 +6,6 @@ public class Adoptujacy {
     private String imie;
     private String nazwisko;
     private int pesel;
-    private String adres;
     private int nr_telefonu;
     private String email;
     private int nr_adresu;

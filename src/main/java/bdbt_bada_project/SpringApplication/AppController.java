@@ -17,13 +17,13 @@ import java.util.List;
 @Configuration
 public class AppController implements WebMvcConfigurer {
 
-    private SchroniskaDAO daoSc;
+
     private PracownicyDAO daoPr;
     private ZwierzetaDAO daoZw;
     private AdoptujacyDAO daoAd;
     private KlatkiDAO daoKl;
-    private WeterynarzeDAO daoWe;
-    private WolontariuszeDAO daoWo;
+    private AdresyDAO daoAdr;
+
     public void addViewControllers(ViewControllerRegistry registry) {
         registry.addViewController("/index").setViewName("index");
         registry.addViewController("/").setViewName("index");
@@ -63,7 +63,30 @@ public class AppController implements WebMvcConfigurer {
     public String showUserPage(Model model) {
         return "user/main_user";
     }
+    //user--------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+    //amdin-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    //pracownicy
+    @RequestMapping("/pracownicy_zarzad")
+    public String pracownicyView(Model model){
+        List<Pracownicy> listPracownicy = daoPr.list();
+        model.addAttribute("listPracownicy", listPracownicy);
+        return "admin/pracownicy_zarzad";
+    }
+    @RequestMapping("/edit_pracownicy/{nr_pracownika}")
+    public ModelAndView showEditFormPracownicy(@PathVariable(name = "nr_pracownika") int nr_pracownika){
+        ModelAndView mav = new ModelAndView("admin/edit_pracownicy");
+        Pracownicy pracownicy = daoPr.get(nr_pracownika);
+        mav.addObject("pracownicy", pracownicy);
+
+        return mav;
+    }
+    @RequestMapping(value="/updatePracownicy", method=RequestMethod.POST)
+    public String updatePracownicy(@ModelAttribute("pracownicy") Pracownicy pracownicy){
+        daoPr.update(pracownicy);
+
+        return "redirect:/pracownicy_zarzad";
+    }
 
 
 
