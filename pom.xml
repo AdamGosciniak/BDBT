@@ -45,7 +45,7 @@
 			<artifactId>ojdbc8</artifactId>
 			<version>1.0</version>
 			<scope>system</scope>
-			<systemPath>"C:\Users\adamg\OneDrive\Pulpit\Gówno na studia\Semestr3\BDBT\sqldeveloper-22.2.1.234.1810-x64\sqldeveloper\jdbc\lib\ojdbc8.jar"</systemPath>
+			<systemPath>"C:\Users\adamg\OneDrive\Pulpit\Gowno na studia\Semestr3\BDBT\sqldeveloper-22.2.1.234.1810-x64\sqldeveloper\jdbc\lib\ojdbc8.jar"</systemPath>
 		</dependency>
 		<!--  Spring Security - start  -->
 		<dependency>
